@@ -1,0 +1,115 @@
+/* Vaasal Villa — public website */
+:root{--sea:#0f766e;--sea-d:#0b3b37;--sand:#f6efe3;--gold:#c08a3e;--ink:#1c2826;--muted:#5d6b68;--line:#e6ded0;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.65 "Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;color:var(--ink);background:#fffdf9}
+h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.2;margin:0 0 .5em}
+h1{font-size:clamp(2.2rem,5vw,3.8rem)} h2{font-size:clamp(1.7rem,3.2vw,2.5rem)} h3{font-size:1.35rem}
+a{color:var(--sea)}
+img{max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.section{padding:80px 0}
+.section.alt{background:var(--sand)}
+.eyebrow{letter-spacing:.2em;text-transform:uppercase;font-size:.78rem;color:var(--gold);font-weight:700;margin-bottom:10px}
+.lead{font-size:1.15rem;color:var(--muted);max-width:680px}
+.center{text-align:center}.center .lead{margin:0 auto}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,253,249,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:Georgia,serif;font-size:1.3rem}
+.logo small{display:block;font-family:"Segoe UI",sans-serif;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.logo-mark{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#e7c27d);display:grid;place-items:center;color:var(--sea-d);font-weight:700}
+.links{display:flex;gap:22px;align-items:center}
+.links a{text-decoration:none;color:var(--ink);font-size:.95rem}
+.links a.on,.links a:hover{color:var(--sea)}
+.cta,.btn{display:inline-block;background:var(--sea);color:#fff!important;padding:11px 22px;border-radius:99px;text-decoration:none;border:0;font:inherit;font-weight:600;cursor:pointer}
+.cta:hover,.btn:hover{background:var(--sea-d)}
+.btn.gold{background:var(--gold)}.btn.gold:hover{background:#a47332}
+.btn.ghost{background:transparent;color:var(--sea)!important;border:1.5px solid var(--sea)}
+.burger{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer}
+
+/* hero */
+.hero{position:relative;min-height:82vh;display:flex;align-items:center;color:#fff;overflow:hidden;
+  background:
+    radial-gradient(ellipse at 20% 110%,rgba(192,138,62,.55),transparent 55%),
+    linear-gradient(180deg,rgba(11,59,55,.25),rgba(11,59,55,.85)),
+    linear-gradient(135deg,#0e7490 0%,#0f766e 45%,#115e59 70%,#1f3b2f 100%)}
+.hero::before{content:"";position:absolute;inset:0;opacity:.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='60' viewBox='0 0 120 60'%3E%3Cpath d='M0 30 Q30 10 60 30 T120 30' fill='none' stroke='%23fff' stroke-width='1.2'/%3E%3C/svg%3E")}
+.hero .palm{position:absolute;right:-40px;bottom:-20px;width:min(520px,60vw);opacity:.22}
+.hero-inner{position:relative;padding:80px 20px 140px}
+.hero h1{max-width:760px}
+.hero p{font-size:1.2rem;max-width:620px;opacity:.92}
+
+/* booking bar */
+.booking-bar{position:relative;z-index:5;margin:-70px auto 0;max-width:1080px;background:#fff;border-radius:18px;box-shadow:0 20px 50px rgba(11,59,55,.18);padding:22px;display:grid;grid-template-columns:repeat(4,1fr) auto;gap:14px;align-items:end}
+.booking-bar label,.form label{display:block;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:5px}
+input,select,textarea{width:100%;padding:12px 14px;border:1px solid #d9d2c3;border-radius:10px;font:inherit;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:2px solid rgba(15,118,110,.25);border-color:var(--sea)}
+textarea{min-height:110px}
+
+/* cards */
+.grid{display:grid;gap:26px}
+.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.room-card{background:#fff;border-radius:18px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.room-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.08)}
+.room-img{height:210px;position:relative;background:linear-gradient(135deg,var(--c,#0f766e),#0b3b37);display:flex;align-items:flex-end;padding:16px;color:#fff}
+.room-img::after{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Cpath d='M0 80 L40 55 L70 70 L110 40 L150 62 L200 45 L200 100 L0 100Z' fill='rgba(255,255,255,.12)'/%3E%3Ccircle cx='160' cy='25' r='12' fill='rgba(255,255,255,.25)'/%3E%3C/svg%3E") bottom/cover no-repeat}
+.room-img span{position:relative;z-index:1;background:rgba(0,0,0,.25);padding:4px 12px;border-radius:99px;font-size:.8rem}
+.room-body{padding:22px;flex:1;display:flex;flex-direction:column}
+.room-body p{color:var(--muted);margin:0 0 12px}
+.price{font-family:Georgia,serif;font-size:1.6rem;color:var(--sea-d)}
+.price small{font-family:"Segoe UI",sans-serif;font-size:.85rem;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 14px}
+.chip{font-size:.75rem;background:var(--sand);border-radius:99px;padding:3px 10px;color:#6b5a3e}
+.room-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.avail{font-size:.85rem;font-weight:600}
+.avail.ok{color:#15803d}.avail.no{color:#b91c1c}
+
+.feature{background:#fff;border-radius:16px;padding:28px;border:1px solid var(--line)}
+.feature .ic{font-size:2rem}
+.split{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center}
+.art{border-radius:24px;min-height:380px;background:linear-gradient(160deg,#c08a3e,#0f766e);position:relative;overflow:hidden}
+.art::after{content:"";position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='150' cy='50' r='26' fill='rgba(255,255,255,.35)'/%3E%3Cpath d='M0 150 Q50 120 100 150 T200 150 V200 H0Z' fill='rgba(255,255,255,.18)'/%3E%3Cpath d='M0 170 Q50 145 100 170 T200 170 V200 H0Z' fill='rgba(255,255,255,.22)'/%3E%3C/svg%3E") center/cover}
+.menu-list .it{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.menu-list .it small{display:block;color:var(--muted)}
+.quote{background:#fff;border-radius:16px;padding:26px;border:1px solid var(--line);font-style:italic}
+.quote b{display:block;font-style:normal;margin-top:10px;color:var(--sea-d)}
+
+/* forms & alerts */
+.form{background:#fff;border-radius:18px;padding:28px;border:1px solid var(--line)}
+.form .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.form .f{margin-bottom:16px}
+.alert{padding:14px 18px;border-radius:12px;margin-bottom:18px}
+.alert-error{background:#fef2f2;color:#991b1b;border:1px solid #fecaca}
+.alert-success{background:#f0fdf4;color:#166534;border:1px solid #bbf7d0}
+.alert-info{background:#eff6ff;color:#1e40af;border:1px solid #bfdbfe}
+.summary{background:var(--sand);border-radius:16px;padding:22px}
+.summary .r{display:flex;justify-content:space-between;padding:4px 0}
+.summary .t{border-top:1px solid var(--line);margin-top:8px;padding-top:10px;font-size:1.2rem;font-weight:700}
+.confirm-ref{font-family:Georgia,serif;font-size:2.4rem;color:var(--sea);letter-spacing:.05em}
+.page-head{padding:60px 0 30px;background:linear-gradient(135deg,#0f766e,#0b3b37);color:#fff}
+.page-head p{opacity:.85;margin:0}
+
+/* footer */
+.site-footer{background:var(--sea-d);color:#cfe3df;padding:60px 0 20px;margin-top:0}
+.site-footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+.site-footer h4{color:#fff;margin:0 0 10px;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase}
+.site-footer a{color:#e7c27d}
+.site-footer .logo{color:#fff}
+.site-footer .copy{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:18px;font-size:.85rem;opacity:.7}
+
+@media (max-width:960px){
+  .g3,.g4{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}
+  .booking-bar{grid-template-columns:1fr 1fr}.booking-bar .btn{grid-column:1/-1}
+  .site-footer .cols{grid-template-columns:1fr 1fr}
+  .burger{display:block}
+  .links{display:none;position:absolute;top:72px;left:0;right:0;background:#fffdf9;flex-direction:column;padding:20px;border-bottom:1px solid var(--line)}
+  body.menu-open .links{display:flex}
+}
+@media (max-width:600px){
+  .g3,.g4,.g2,.form .row{grid-template-columns:1fr}
+  .booking-bar{grid-template-columns:1fr;margin-top:-50px}
+  .section{padding:56px 0}
+  .site-footer .cols{grid-template-columns:1fr}
+}
